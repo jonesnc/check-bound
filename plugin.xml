@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+    <plugin smlns="http://plugin.powerschool.pearson.com" 
+        xmlns:xsi="http://www.w3.org/2001/SMLSchema-instance"
+        description="checkboundary" 
+        name="Check Boundary" 
+        version="1.0" 
+        xsci:schemaLocation="http://plugin.powerschool.pearson.com plugin.xsd"
+    > 
+    <publisher name="Iron County Schools Data Team"> 
+        <contact email="data@ironmail.org"> 
+    </publisher> 
+</plugin> 

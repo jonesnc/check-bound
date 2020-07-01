@@ -1,0 +1,34 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>Boundary</title> 
+    <!-- Required scripts  -->
+        ~[wc:commonscripts]
+    <!-- Required Style Sheets: screen.css and print.css -->
+        <link href="/images/css/screen.css" rel="stylesheet" media="screen"> 
+        <link href="/images/css/print.css" rel="stylesheet" media="print"> 
+    </head> 
+    <body> 
+        ~[wc:admin_header_frame_css]
+        <!-- Breadcrumb Start-->
+            <a href="/admin/home.html" target="_top">Start Page</a> &gt; <a href="/admin/students/home.html?selectstudent=nosearch" target="_top">Student Selection</a> &gt; Community Service 
+        <!-- Breadcrumb End-->
+    ~[wc:admin_navigation_frame_css]
+    <!-- start of main menu and content -->
+    ~[wc:title_student_begin_css]Boundary~[wc:title_student_end_css]
+
+    <!-- Start of Content Area -->
+    <div class="box-round">
+            ~[wc:check_boundary]
+        </div> 
+        <div class = "button-row"> 
+        <input type="button" value ="Check Boundary" onclick = "checkBoundary()" />
+        </div> 
+    <!-- End of Content Area -->
+        ~[wc:admin_footer_frame_css]
+    </body> 
+    <script src = "check_boundary.js"> 
+
+    </script> 
+</html> 
+

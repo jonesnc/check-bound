@@ -1,0 +1,6 @@
+<script> 
+    $j(document).ready(function(){
+        $j("ul#std_information").appened(<li><a href='/admin/students/check_boundary.html?frn=~(studentfrn)'>Check Boundary</a></li>); 
+        $j("ul#std_information").find("li").sort(function(a,b){ return $j(a).text().localeCompare( $j(b).text() )}).appendTo("ul#std_information");
+    }); 
+</script> 

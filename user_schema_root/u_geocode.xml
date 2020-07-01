@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?> 
+<psExtention xmlns="https://www.powerschool.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xci:schemaLocation="http://powerschool.com psextension.xsd"> 
+    <extentionname>U_geocode</extentionname> 
+    <extendedTable coreTable="Students" dbTableName="U_geocode_data" childName= "U_geocode_data" comment=""> 
+        <field name="latitute" type="Double"> 
+        <field name="longitude" type="Double"> 
+        <field name="in_boundary" type="Boolean"> 
+    </extendedTable> 
+</psExtention> 
