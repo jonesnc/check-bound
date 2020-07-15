@@ -68,10 +68,6 @@ TemplateName:Admin Student Page
         ~[submitbutton]</div>
     </form> 
     
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-    <script src="https://unpkg.com/geocodio-library-node@1.3.0/lib/index.js"></script>
-    
     <script type="text/javascript">
         // The function that checks if a point is within a given bound. 
         function inner(point, vs) {
@@ -93,33 +89,39 @@ TemplateName:Admin Student Page
             return inside;
         };
         
-        /**
+        
         // The function that's used to check an address's latitude and longitude. 
         function getGeocode(){
-            // Get Student's Address 
+	      // Get Student's Address 
             var street = "~([01]street)"; 
             var city = "~([01]city)"; 
             var state = "~([01]state)"; 
             var zip = "~([01]zip)"; 
             var address = street + ' ' + city + ' ' + state + ' ' + zip ; 
             var lat; 
-            var long ; 
-            // Geocode the address . . . ?? 
-            axios.get(`https://api.geocod.io/v1.6/geocode?q=${address}&api_key=a5ee6598852752888e358553e229a9e2e2a3eee`).then((response) => {
-                response = response.data;
-                lat = response.results[0].location.lat;
-                long = response.results[0].location.lng; 
-                var geocoding = "Lat: " + lat + ", Lng: " + long; 
-                document.getElementById("geocode").value = geocoding; 
-                checkBounds(); 
-            })
-            .catch(err =>{
-                console.error(err); 
-            }
-            ); 
-            
+            var long; 
+            require.config({
+                paths: {
+                    axios: 'https://unpkg.com/axios/dist/axios.min'
+                }
+            });
+            require(['axios'], axios => {
+                axios
+                    .get(`https://api.geocod.io/v1.6/geocode?q=${address}&api_key=a5ee6598852752888e358553e229a9e2e2a3eee`)
+                    .then(response => {
+                        response = response.data;
+                        lat = response.results[0].location.lat;
+                        long = response.results[0].location.lng; 
+                        var geocoding = "Lat: " + lat + ", Lng: " + long; 
+                        document.getElementById("geocode").value = geocoding; 
+                        checkBounds(); 
+                    })
+                    .catch(err =>{
+                        console.error(err); 
+                    }); 
+            });
         }
-        */
+        
         
         // Checks if the student's geocode is within the school's bound. 
         function checkBounds(){
